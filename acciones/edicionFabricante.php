@@ -30,7 +30,7 @@
     $fila = mysqli_fetch_array($resultado);
 
 ?>
-    <form action="editarFabricante.php" method="POST">
+    <form action="editarfabricante.php" method="POST">
         <div class="mb-3">
             <label class="form-label">Editar el nombre del fabricante</label>
             <input type="text" class="form-control" name="nomFabricante" value="<?php echo $fila["nombre"] ?>"/>
