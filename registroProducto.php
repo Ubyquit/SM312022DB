@@ -12,8 +12,7 @@
 
 
         $insertarProducto = 
-        "INSERT INTO producto (nombre, precio, codigo_fabricante) 
-        VALUE ('$nomProducto', '$costoProducto', '$codigoFabricante')";
+        "CALL sp_insertarProducto('$nomProducto', '$costoProducto', '$codigoFabricante')";
 
         $resultado = mysqli_query($conexion,$insertarProducto);
 

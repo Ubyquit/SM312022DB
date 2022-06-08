@@ -15,6 +15,9 @@
 </head>
 
 <body>
+<?php
+include('partials/nav.html');
+?>
   <h3>Crea un producto</h3>
 
   <form action="registroProducto.php" method="POST">

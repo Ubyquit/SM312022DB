@@ -15,6 +15,9 @@
 </head>
 
 <body>
+<?php
+include('partials/nav.html');
+?>
   <h3>CREAR UN FABRICANTE</h3>
 
   <form action="registrofabricante.php" method="POST">

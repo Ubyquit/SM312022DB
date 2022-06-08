@@ -1,1 +1,3 @@
-Dashboard
+<?php
+include('partials/nav.html');
+?>

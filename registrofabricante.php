@@ -6,9 +6,9 @@
 
         $nomFabricante = $_POST['nomFabricante'];
 
-        $insertarFabricante = 
-        "INSERT INTO fabricante (nombre) 
-        VALUE ('$nomFabricante')";
+        //$insertarFabricante = "INSERT INTO fabricante (nombre) VALUE ('$nomFabricante')";
+
+        $insertarFabricante = "CALL sp_insertarFabricante('$nomFabricante')";
 
         $resultado = 
         mysqli_query($conexion,$insertarFabricante);
@@ -22,3 +22,5 @@
     }
 
     header('Location: fabricantes.php');
+
+?>
