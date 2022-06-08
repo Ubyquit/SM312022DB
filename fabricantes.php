@@ -44,7 +44,7 @@ include('partials/nav.html');
       include('conec.php'); //Conexión a la db
       
       //consulta a la db
-      $consulta = "SELECT * FROM fabricante"; 
+      $consulta = "CALL sp_mostrarFabricantes"; 
       
       $resultado = mysqli_query($conexion,$consulta); 
 

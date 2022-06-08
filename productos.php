@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<?php
+  <?php
 include('partials/nav.html');
 ?>
   <h3>Crea un producto</h3>
@@ -36,7 +36,7 @@ include('partials/nav.html');
       <select class="form-select" aria-label="Default select example" name="codigoFabricante">
         <?php
         include('conec.php'); //Conexión a la db
-        $consulta2 = "SELECT * FROM fabricante";
+        $consulta2 = "CALL sp_mostrarFabricantes";
         $resultado2 = mysqli_query($conexion, $consulta2);
         while ($fila2 = mysqli_fetch_array($resultado2)) {
         ?>
@@ -62,10 +62,7 @@ include('partials/nav.html');
     <tbody>
       <?php
       //consulta a la db
-      $consulta = "SELECT producto.codigo, producto.nombre, producto.precio, fabricante.nombre AS fabricante
-      FROM producto
-      INNER JOIN fabricante
-      ON producto.codigo_fabricante = fabricante.codigo ORDER BY producto.codigo ASC";
+      $consulta = "CALL sp_mostrarProductos()";
 
       $resultado = mysqli_query($conexion, $consulta);
 
