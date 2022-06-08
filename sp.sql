@@ -55,3 +55,34 @@ SELECT producto.codigo, producto.nombre, producto.precio, fabricante.nombre AS f
 END$$
 
 DELIMITER ;
+
+USE `tienda`;
+DROP procedure IF EXISTS `sp_eliminarFabricante`;
+
+DELIMITER $$
+USE `tienda`$$
+CREATE PROCEDURE sp_eliminarFabricante (
+in codigoD int 
+)
+BEGIN
+	DELETE FROM fabricante WHERE codigo = codigoD;
+END$$
+
+DELIMITER ;
+
+
+USE `tienda`;
+DROP procedure IF EXISTS `sp_editarFabricante`;
+
+DELIMITER $$
+USE `tienda`$$
+CREATE PROCEDURE sp_editarFabricante (
+	in nombreU varchar(100),
+    in codigoU int
+)
+BEGIN
+	UPDATE fabricante SET nombre = nombreU WHERE codigo = codigoU;
+END$$
+
+DELIMITER ;
+
