@@ -4,11 +4,18 @@
 
     if(isset($_POST['enviar'])){
 
+        $nom=$_REQUEST["txtnom"];
+        $imagen = $_FILES['imagen']['name'];
+        $ruta=$_FILES["imagen"]["tmp_name"];
+        $destino="img/".$imagen;
+
+        copy($ruta,$destino);
+
         $nomFabricante = $_POST['nomFabricante'];
 
         //$insertarFabricante = "INSERT INTO fabricante (nombre) VALUE ('$nomFabricante')";
 
-        $insertarFabricante = "CALL sp_insertarFabricante('$nomFabricante')";
+        $insertarFabricante = "CALL sp_insertarFabricante('$nomFabricante','$destino')";
 
         $resultado = 
         mysqli_query($conexion,$insertarFabricante);
@@ -22,5 +29,3 @@
     }
 
     header('Location: fabricantes.php');
-
-?>

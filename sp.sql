@@ -37,6 +37,7 @@ USE `tienda`$$
 CREATE PROCEDURE sp_mostrarFabricantes ()
 BEGIN
 SELECT * FROM fabricante;
+
 END$$
 
 DELIMITER ;
@@ -82,6 +83,7 @@ CREATE PROCEDURE sp_editarFabricante (
 )
 BEGIN
 	UPDATE fabricante SET nombre = nombreU WHERE codigo = codigoU;
+
 END$$
 
 DELIMITER ;

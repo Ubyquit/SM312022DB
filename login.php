@@ -5,8 +5,7 @@
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    $consulta = "SELECT * FROM examen 
-                 WHERE Correo = '$email'";
+    $consulta = "SELECT * FROM examen WHERE Correo = '$email'";
     $resultado = mysqli_query($conexion, $consulta);
     $fila = mysqli_fetch_array($resultado);
 
