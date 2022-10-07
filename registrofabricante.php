@@ -17,8 +17,7 @@
 
         $insertarFabricante = "CALL sp_insertarFabricante('$nomFabricante','$destino')";
 
-        $resultado = 
-        mysqli_query($conexion,$insertarFabricante);
+        $resultado = mysqli_query($conexion,$insertarFabricante);
 
         if(!$resultado){
             echo '<script>alert("Los datos no se insertaron")</script>';
